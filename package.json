@@ -1,0 +1,14 @@
+{
+  "name": "magister-api",
+  "version": "1.0.0",
+  "description": "A high level api making it easier to perform various tasks on Magister.",
+  "license": "MIT",
+  "main": "src/index.js",
+  "keywords": [
+    "magister",
+    "api"
+  ],
+  "dependencies": {
+    "puppeteer": "^7.0.4"
+  }
+}
