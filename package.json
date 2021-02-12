@@ -1,14 +1,18 @@
 {
   "name": "jsmagister",
   "description": "A high level api making it easier to perform various tasks on Magister.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "kiip",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "index.js",
   "keywords": [
     "magister",
     "school"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/kiipy/jsmagister"
+  },
   "scripts": {
     "test": "node test"
   },
