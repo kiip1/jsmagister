@@ -1,13 +1,17 @@
 {
-  "name": "magister-api",
-  "version": "1.0.0",
+  "name": "magister-js",
   "description": "A high level api making it easier to perform various tasks on Magister.",
+  "version": "1.0.0",
+  "author": "kiip",
   "license": "MIT",
   "main": "src/index.js",
   "keywords": [
     "magister",
-    "api"
+    "school"
   ],
+  "scripts": {
+    "test": "node test"
+  },
   "dependencies": {
     "puppeteer": "^7.0.4"
   }
