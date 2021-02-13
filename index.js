@@ -44,7 +44,7 @@ const magister = {
   /**
    * Logs out of magister.
    */
-  logout: async () => await page.evaluate('document.getElementById(\'user-menu\').click();document.getElementById(\'log-off\').click();'),
+  logout: async () => await page.evaluate(`document.getElementById('user-menu').click();document.getElementById('log-off').click();`),
   /**
    * Navigate to a page within Magister.
    * 
@@ -80,6 +80,30 @@ const magister = {
    * @param {string} filename The filename to store the screenshot as.
    */
   takeScreenShot: async (filename) => await page.screenshot({ path: filename }),
+  assignments: {
+    /**
+     * Returns the list of opened assignments.
+     */
+    getAssignments: async () => {
+      await page.waitForSelector('#opdrachten-container>section>div>div.scroll-table.opdrachten-list.normaal>table>tbody');
+
+      return page.evaluate(async () => {
+        return await new Promise(resolve => {
+          var table = [];
+          
+          document.querySelector('#opdrachten-container>section>div>div.scroll-table.opdrachten-list.normaal>table>tbody').querySelectorAll('tr').forEach(row => {
+            var rowContent = [];
+            
+            row.querySelectorAll('td').forEach(column => rowContent.push(column.innerText));
+          
+            table.push(rowContent);
+          });
+          
+          resolve(table);
+        })
+      });
+    },
+  },
   /**
    * Stops the API.
    */
